@@ -40,7 +40,6 @@ cd social-engineering-simulator
 ```bash
 pip install -r requirements.txt
 ```
-This will install Flask, MySQL connector, and other necessary libraries.
 
 ### 3. Configure the Database
 
@@ -60,9 +59,8 @@ python database.py
 ```bash
 python test.py
 ```
-This will populate the users and scenarios tables with mock data.
 
-###6. Configure Email Settings
+### 6. Configure Email Settings
 Update the email_config dictionary in email_send.py with your SMTP server details and email credentials:
 
 ```python
@@ -80,11 +78,8 @@ email_config = {
 ```bash
 python tracker.py
 ```
-This will start the application at http://127.0.0.1:5000. You can open this URL in your browser to access the dashboard and track clicks.
 
 ### Use ngrok for External Access
-If you want to make your local Flask application publicly accessible (for example, to send phishing emails with links that need to be clicked externally), you can use ngrok.
-
 
 Expose your local Flask server to the internet by running the following command:
 
