@@ -96,11 +96,3 @@ tracking_base_url = "https://xxxxxxxx.ngrok.io/track_click"
 ### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-
-### Key Additions:
-- **Use ngrok for External Access**: This section explains how to set up ngrok to expose your local server to the internet and update the tracking URL in the phishing email.
-- **Instructions to update phishing email links**: The ngrok-generated URL is used to replace the local server URL in the email tracking link.
-
-```css
-This should now provide full instructions on using ngrok for external access during testing.
-```
