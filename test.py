@@ -1,19 +1,19 @@
 import mysql.connector
 
-#connect to the database to add values into the table and also mention the database to use
+
 mydb=mysql.connector.connect(
-    host="localhost",
-    user="root",      
-    password="password",  
+    host="your_hostname",
+    user="your_username",      
+    password="your_password",  
     database="social_engineering_simulator" 
 )
 
 
-# this is list of tuples where each tuple is record for each user and same as the scenarios values with title ans subject
+
 sample_users = [
-    ("Alice Johnson", "suryatej2601@gmail.com", "IT", "not_trained"),
-    ("Bob Smith", "suryatej276@gmail.com", "HR", "not_trained"),
-    ("Charlie Brown", "suryatejpattem@gmail.com", "Finance", "not_trained"),
+    ("user_1_name", "user_1_email", "user_1_department", "not_trained"),
+    ("user_2_name", "user_2_email", "user_2_department", "not_trained"),
+    ("user_3_name", "user_3_email", "user_3_department", "not_trained"),
 ]
 
 sample_scenarios = [
