@@ -1,18 +1,12 @@
 import mysql.connector
 
-#this s=is used to connect python with the mysql database 
 mydb=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="password"
+    host="your_hostname",
+    user="your_username",
+    password="your_passowrd"
 
 )
 
-
-#we can directly run the sql commands in the mysql workbench and it will run the commands and create the database and tables in the server
-#or we can aslo coonect the mysql with python and give the sql commands and it will also connects with the mysql server and creates the database and tables
-#we will write all the commands in the variable we wanted to execute and auto increment is used for incrementing the numbers and unique is used to check for no duplicates
-#current_timestamp gives the prsent time when it is created and foreign key is used to link user_id to users and on delete cascade is used when user is deleted then their responses will be deleted
 sql="""
 CREATE DATABASE IF NOT EXISTS social_engineering_simulator;
 USE social_engineering_simulator;
@@ -46,15 +40,15 @@ CREATE TABLE responses(
 """
 
 try:
-    mycursor=mydb.cursor()#creates the mycursor object to execute sql statements
+    mycursor=mydb.cursor()
 
-    for statement in sql.split(";"):#splits the sql statements into individual commands
-        if statement.strip():#strips the white spaces and executes the statements
-            mycursor.execute(statement)#this executes each statement
+    for statement in sql.split(";"):
+        if statement.strip():
+            mycursor.execute(statement)
             print(f"executed: {statement.strip()}")
     
     print("Database and tables created sucessfully!")
-#finds if any error and prints it
+    
 except mysql.connector.Error as err:
     print(f"error:{err}")
 finally:
@@ -62,4 +56,3 @@ finally:
         mycursor.close()
     if mydb:
         mydb.close()
-#this is used to make the database and curosor connections are closed for freeing the resources
