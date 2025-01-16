@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Simulation Dashboard</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Phishing Simulation Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Scenario Title</th>
+                <th>Clicked</th>
+                <th>Clicked Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for response in responses %}
+            <tr>
+                <td>{{ response[0] }}</td>
+                <td>{{ response[1] }}</td>
+                <td>{{ response[2] }}</td>
+                <td>{{ 'Yes' if response[3] else 'No' }}</td>
+                <td>{{ response[4] if response[4] else 'NONE'}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
