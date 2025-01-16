@@ -54,6 +54,14 @@ def track_click():
         """, (user_id, scenario_id))
         mydb.commit()
 
+        #update the user table after clicking the link
+        mycursor.execute("""
+            UPDATE users
+            SET status = 'trained'
+            WHERE user_id = %s
+        """, (user_id,))
+        mydb.commit()
+
         # Display a thank-you message
         return render_template("response.html")
 
