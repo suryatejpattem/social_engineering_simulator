@@ -6,9 +6,9 @@ app=Flask(__name__)#creates instance of the flask application
 
 #connect the mysql database server
 mydb=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="password",
+    host="your_localhost",
+    user="your_username",
+    password="your_password",
     database="social_engineering_simulator"
 
 )
